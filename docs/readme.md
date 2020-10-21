@@ -43,7 +43,7 @@ The package as the following database tables structure:
 
 |Field|Type|Null|Notes|
 |----|----|----|----|
-|approval_id|String|No|Automaticall Generated|
+|approval_id|String|No|Automaticaly Generated|
 |approval_name|String|Yes||
 |approval_require_all|String|Yes||
 |approval_approver1|String|Yes||
@@ -51,18 +51,22 @@ The package as the following database tables structure:
 |approval_approver3|String|Yes||
 |approval_approver4|String|Yes||
 |approval_final_step|String|Yes||
+|created_at|DateTime|Yes||
+|updated_at|DateTime|Yes||
 
 ### Approvals Audit Table
 
 |Field|Type|Null|Notes|
 |----|----|----|----|
-|audit_id|String|No|Automaticall Generated|
+|audit_id|String|No|Automaticaly Generated|
 |approval_id|String|No|Comes from Audit Table|
 |requester_id|String|No|Comes from logged in user|
 |approver1_response|String|Yes||
 |approver2_response|String|Yes||
 |approver3_response|String|Yes||
 |approver4_response|String|Yes||
+|created_at|DateTime|Yes||
+|updated_at|DateTime|Yes||
 
 
 ### Approvals Controls Table
@@ -75,3 +79,5 @@ The package as the following database tables structure:
 |approval_edit|String|Yes||
 |approval_del|String|Yes||
 |approval_download|String|Yes||
+|created_at|DateTime|Yes||
+|updated_at|DateTime|Yes||
