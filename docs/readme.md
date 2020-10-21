@@ -43,3 +43,14 @@ The package as the following database tables structure:
 
 |Field|Type|Null|Notes|
 |----|----|----|----|
+
+### Approvals Controls Table
+
+|Field|Type|Null|Notes|
+|----|----|----|----|
+|user_id|String–|No|Comes from the users table|
+|approval_view|String|Yes||
+|approval_add|String|Yes||
+|approval_edit|String|Yes||
+|approval_del|String|Yes||
+|approval_download|String|Yes||
