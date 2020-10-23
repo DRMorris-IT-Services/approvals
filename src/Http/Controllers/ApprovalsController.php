@@ -49,8 +49,22 @@ class ApprovalsController extends Controller
     public function store(Request $request)
     {
         //
+        $approval_id = Str::random(60);
 
+        approvals::create([
+            'approval_id' => $approval_id,
+            'approval_name' => $request['approval_name'],
+            'approver1_name' => $request['approver1_name'],
+            'approver1_email' => $request['approver1_email'],
+            'approver2_name' => $request['approver2_name'],
+            'approver2_email' => $request['approver2_email'],
+            'approver3_name' => $request['approver3_name'],
+            'approver3_email' => $request['approver3_email'],
+            'approver4_name' => $request['approver4_name'],
+            'approver4_email' => $request['approver4_email'],
+            'approval_status' => 'Pending Approval',
         
+        ]);
 
         return back()->withStatus(__('Approval Successfully Created.'));
     }
