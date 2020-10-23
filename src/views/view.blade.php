@@ -6,19 +6,21 @@
 
         @include('approvals::layouts.alerts')
 
+        @foreach($approvals as $ap)
+
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
               <a class="nav-link active" id="home-tab" href="{{route('approvals')}}" role="tab" aria-controls="home" aria-selected="true">List</a>
             </li>
             
             <li class="nav-item">
-             <a class="nav-link" id="profile-tab" href="#" role="tab" aria-controls="profile" aria-selected="false">Edit</a>
+             <a class="nav-link" id="profile-tab" href="{{route('approvals.edit',['id' => $ap->approval_id])}}" role="tab" aria-controls="profile" aria-selected="false">Edit</a>
             </li>
             
             
           </ul>
 
-@foreach($approvals as $ap)
+
 
             <div class="row justify-content-center">
                 <div class="col-md-12">

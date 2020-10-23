@@ -89,9 +89,12 @@ class ApprovalsController extends Controller
      * @param  \App\approvals  $approvals
      * @return \Illuminate\Http\Response
      */
-    public function edit(approvals $approvals)
+    public function edit(approvals $approvals, $id)
     {
         //
+        return view('approvals::edit',[
+            'approvals' => $approvals->where('approval_id', $id)->get(),
+        ]);
     }
 
     /**
@@ -104,7 +107,19 @@ class ApprovalsController extends Controller
     public function update(Request $request, approvals $approvals, $id)
     {
         //
-
+        approvals::where('approval_id', $id)->update([
+            'approval_name' => $request['approval_name'],
+            'approver1_name' => $request['approver1_name'],
+            'approver1_email' => $request['approver1_email'],
+            'approver2_name' => $request['approver2_name'],
+            'approver2_email' => $request['approver2_email'],
+            'approver3_name' => $request['approver3_name'],
+            'approver3_email' => $request['approver3_email'],
+            'approver4_name' => $request['approver4_name'],
+            'approver4_email' => $request['approver4_email'],
+            'approval_status' => $request['approval_status'],
+        
+        ]);
         
 
         return back()->withStatus(__('Approval Successfully Updated.'));
