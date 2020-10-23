@@ -42,7 +42,7 @@
                                         <tbody>
                                             @foreach($approvals as $ap)
                                                 <tr>
-                                                <td>{{$ap->approval_name}}</td>
+                                                <td><a href="{{route('approvals.view',['id' => $ap->approval_id])}}">{{$ap->approval_name}}</a></td>
                                                 <td>{{$ap->approver1_name}}</td>
                                                 <td>{{$ap->approver2_name}}</td>
                                                 <td>{{$ap->approver3_name}}</td>

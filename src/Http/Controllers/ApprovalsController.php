@@ -75,9 +75,12 @@ class ApprovalsController extends Controller
      * @param  \App\approvals  $approvals
      * @return \Illuminate\Http\Response
      */
-    public function show(approvals $approvals)
+    public function show(approvals $approvals, $id)
     {
         //
+        return view('approvals::view',[
+            'approvals' => $approvals->where('approval_id', $id)->get(),
+        ]);
     }
 
     /**
