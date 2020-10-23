@@ -134,8 +134,8 @@ class ApprovalsController extends Controller
     public function destroy(approvals $approvals, $id)
     {
         //
-
+        approvals::where('approval_id', $id)->delete();
        
-        return back()->withDelete(__('Approval Successfully Deleted.'));
+        return redirect('/approvals')->withDelete(__('Approval Successfully Deleted.'));
     }
 }
