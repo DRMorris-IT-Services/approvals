@@ -27,7 +27,35 @@
                         <div class="card-body">
 
                         <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Approvals Table</div>
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                            <th>Name</td>
+                                            <th>Approver 1</th>
+                                            <th>Approver 2</th>
+                                            <th>Approver 3</th>
+                                            <th>Approver 4</th>
+                                            <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($approvals as $ap)
+                                                <tr>
+                                                <td>{{$ap->approval_name}}</td>
+                                                <td>{{$ap->approver1_name}}</td>
+                                                <td>{{$ap->approver2_name}}</td>
+                                                <td>{{$ap->approver3_name}}</td>
+                                                <td>{{$ap->approver4_name}}</td>
+                                                <td>{{$ap->approval_status}}</td>
+                                                </tr>
+                                            @endforeach
+
+                                        </tbody>
+
+                                    </table>
+                                
+                                </div>
                                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <form class="col-md-12" action="{{ route('approvals.add') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
